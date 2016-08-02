@@ -1,0 +1,32 @@
+<div class="holder padding-zero" ng-controller="WidgetCodeCtrl as WidgetCode">
+  <div class="loyalty-plugin">
+    <div class="purchase-amount padded margin-top-ten">
+      <p class="text-center">Please hand your device to a staff member for
+        confirmation</p>
+
+      <div class="enter-price clearfix border-bottom-grey">
+        <input type="password" placeholder="Enter Code"
+               class="form-control text-center border-none"
+               ng-model="WidgetCode.passcode" maxlength="5" get-focus
+               ng-click="WidgetCode.preventClickBehavior($event)">
+      </div>
+      <div class="next-btn margin-top-twenty">
+        <button class="btn btn-success stretch" href="javascript:void(0);"
+                ng-click="WidgetCode.confirmPasscode()"
+                ng-disabled="!WidgetCode.passcode">
+          Confirm
+        </button>
+      </div>
+    </div>
+    <div class="col-xs-12 margin-top-five">
+      <div class="alert alert-sm text-center alert-danger"
+           ng-if="WidgetCode.passcodeFailure">Invalid confirmation
+        code.
+      </div>
+      <div class="alert alert-sm text-center alert-danger"
+           ng-if="WidgetCode.dailyLimitExceeded">You have
+        exceeded the daily limit.
+      </div>
+    </div>
+  </div>
+</div>

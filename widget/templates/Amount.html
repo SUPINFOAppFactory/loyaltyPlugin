@@ -1,0 +1,30 @@
+<div class="holder padding-zero" ng-controller="WidgetAmountCtrl as
+     WidgetAmount">
+  <div class="loyalty-plugin amount">
+    <div class="purchase-amount padded margin-top-ten">
+      <p class="text-center">Enter the Purchase Amount</p>
+      <form name="myform">
+        <div class="enter-price clearfix border-bottom-grey">
+          <span class="currency"
+                ng-bind-html="WidgetAmount.safeHtml(WidgetAmount.data.settings.currency.symbol ||'$')"></span>
+          <input min="0" type="number" placeholder="0"
+                 class="form-control text-right border-none"
+                 ng-model="WidgetAmount.amount" get-focus ng-click="WidgetAmount.preventClickBehavior($event)">
+        </div>
+      </form>
+      <div class="next-btn margin-top-twenty">
+        <button class="btn btn-primary stretch margin-top"
+                href="javascript:void(0);" ng-click="WidgetAmount.confirmCode()"
+                ng-disabled="!(WidgetAmount.amount > 0) || !myform.$valid"
+            >Next
+        </button>
+      </div>
+    </div>
+    <div class="col-xs-12 margin-top-five">
+      <div class="alert alert-sm text-center alert-danger"
+           ng-if="WidgetAmount.totalLimitExceeded">You have
+        exceeded the total limit.
+      </div>
+    </div>
+  </div>
+</div>

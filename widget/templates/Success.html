@@ -1,0 +1,31 @@
+<div class="holder padding-zero" ng-controller="WidgetSuccessCtrl as
+     WidgetSuccess">
+  <div class="loyalty-plugin">
+    <div id="carousel4" ng-if="WidgetSuccess.reward.carouselImage.length"
+         build-fire-carousel4="" ng-style="WidgetSuccess.reward.carouselImage.length > 0 ? {'min-height': (9 * deviceWidth / 16) + 'px' } : {}"></div>
+    <div class="plugin-slider text-center" ng-if="!WidgetSuccess.reward.carouselImage.length">
+      <div class="plugin-slide">
+        <img src="../../../styles/media/holder-16x9.png">
+      </div>
+    </div>
+    </div>
+    <div class="padded" ng-if="WidgetSuccess.reward">
+      <div class="clearfix row">
+        <div class="col-xs-8 pull-left">
+          <p class="margin-zero ellipsis">{{WidgetSuccess.reward.title}}</p>
+
+          <p class="margin-zero ellipsis opacity-seventy">
+            {{WidgetSuccess.reward.pointsToRedeem}} Points</p>
+        </div>
+      </div>
+      <hr class="small">
+      <div class="editor text-center">
+        <p class="margin-top-ten"
+           ng-bind-html="WidgetSuccess.safeHtml(WidgetSuccess.reward.description)"></p>
+        <a class="btn btn-primary padding-left-thirty padding-right-thirty"
+           href="javascript:void(0);"
+           ng-click="WidgetSuccess.goToHome()">Done</a>
+      </div>
+    </div>
+  </div>
+</div>
