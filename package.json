@@ -1,7 +1,7 @@
 {
   "name": "loyaltyPlugin",
   "version": "1.0.0",
-  "description": "SUPINFO AppFactory plugin to enable people to provide a reward and points system to their users.",
+  "description": "Plugin to enable people to provide a reward and points system to their users.",
   "main": "index.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",
